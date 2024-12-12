@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Viajes</title>
+    <link rel="stylesheet" href="MICSSF.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="h1">Viajes Sol</h1>
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html">Ofertas</a></li>
+                <li><a href="contactos.html" class="active">Contactos</a></li>
+                <li><a href="quienes_Somos.html">Quienes somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="body">
+        <form id="formulario">
+            <article class="article">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+            </article>
+
+            <article class="article">            
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+            </article>
+
+            <article class="article">            
+                <label for="origen">Origen:</label>
+                <input type="text" id="origen" name="origen" placeholder="Pon tu origen" required>
+            </article>
+
+            <article class="article">            
+                <label for="destino">Destino:</label>
+                <input type="text" id="destino" name="destino" placeholder="Pon tu destino" required>
+            </article>
+
+            <article class="article">            
+                <label for="personas">Número de personas:</label>
+                <input type="number" id="personas" name="personas" placeholder="Pon el número de personas" min="1" required>
+            </article>
+
+            <article class="article">
+                <label for="fecha">Selecciona una fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </article>
+
+            <article class="article">
+                <button type="button" onclick="solicitarInformacion()">Solicitar Información</button>
+                <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+            </article>
+        </form>
+
+        <!-- Contenedor para mostrar los resultados -->
+        <div id="resultado"></div>
+    </section>
+
+    <footer>
+        <ul class="footer">
+            <li><img class="imagen" src="imagenes/facebook.png" alt="Facebook"></li>
+            <li><img class="imagen" src="imagenes/google.png" alt="Google"></li>
+            <li><img class="imagen" src="imagenes/tuiter.png" alt="Twitter"></li>
+        </ul>
+    </footer>
+
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="recopilar.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+}
+
+.h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: azure;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 30px;
+    list-style: none;
+    color: white;
+    width: 100%;
+   
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    width: 100%;
+    padding: 20px;
+    gap: 20px; /* Espacio entre artículos */
+}
+
+.article {
+    display: flex;
+    flex-direction: row; /* Imagen y texto en fila */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    width: 90%; /* Ajusta el ancho del artículo */
+    max-width: 800px; /* Limita el ancho máximo */
+    border: 1px solid #ccc; /* Bordes opcionales */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.article img {
+    width: 150px; /* Tamaño de la imagen */
+    height: auto; /* Mantiene proporción */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.article .text {
+    display: flex;
+    flex-direction: column; /* Texto en columna */
+    gap: 10px; /* Espacio entre el título y el párrafo */
+}
+
+.article h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.article p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-color: black;
+    list-style: none;
+    padding: 10px;
+}
+
+.imagen {
+    height: 24px;
+    width: 24px;
+}
+
+.nav a {
+    color: white; /* Color predeterminado para los enlaces */
+    text-decoration: none;
+}
+
+.nav a.active {
+    color: blue; /* Enlace activo en azul */
+    font-weight: bold; /* Opcional: resalta el enlace activo */
+}
+
+.nav a:hover {
+    color: red; /* Color al pasar el mouse */
+    text-decoration: underline; /* Opcional */
+}
+
+

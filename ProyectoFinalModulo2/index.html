@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MovieApp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">🎥 MovieApp</div>
+    <div>
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="professionals.html" class="nav-link">Profesionales</a>
+    </div>
+    <button class="add-movie" onclick="openForm()">Agregar Película</button>
+  </nav>
+
+  <header class="cover">
+    <h1>Bienvenido a MovieApp</h1>
+    <p>Tu aplicación para gestionar películas y profesionales del cine.</p>
+  </header>
+
+  <main>
+    <section id="movie-list" class="movie-carousel"></section>
+  </main>
+
+  <div id="movieForm" class="form-container">
+    <form onsubmit="addMovieFromForm(event)">
+      <h2>Agregar Película</h2>
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="releaseYear">Año de lanzamiento:</label>
+      <input type="date" id="releaseYear" name="releaseYear" required>
+
+      <label for="genre">Género:</label>
+      <select id="genre" name="genre" required>
+        <option value="">Seleccionar género</option>
+        <option value="Acción">Acción</option>
+        <option value="Terror">Terror</option>
+        <option value="Comedia">Comedia</option>
+        <option value="Drama">Drama</option>
+        <option value="Ciencia Ficción">Ciencia Ficción</option>
+        <option value="Romance">Romance</option>
+      </select>
+
+      <label for="professional">Profesional:</label>
+      <select id="professional" name="professional">
+        <!-- Options will be populated dynamically -->
+      </select>
+      <button type="button" onclick="openProfessionalForm()">Agregar Profesional</button>
+
+      <label for="poster">Póster:</label>
+      <input type="file" id="poster" name="poster" accept="image/*">
+
+      <button type="submit">Guardar Película</button>
+      <button type="button" onclick="closeForm()">Cerrar</button>
+    </form>
+  </div>
+
+  <div id="professionalForm" class="form-container">
+    <form onsubmit="addProfessionalFromForm(event)">
+      <h2>Agregar Profesional</h2>
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Edad:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label for="profession">Profesión:</label>
+      <input type="text" id="profession" name="profession" required>
+
+      <button type="submit">Guardar Profesional</button>
+      <button type="button" onclick="closeProfessionalForm()">Cerrar</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>MovieApp &copy; 2025</p>
+    <a href="https://twitter.com/movieapp" target="_blank">Twitter</a>
+    <a href="https://facebook.com/movieapp" target="_blank">Facebook</a>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

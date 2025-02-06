@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b6b5d;
+  padding: 15px 20px; /* Espacio en los lados */
+  color: white;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  flex-grow: 1; /* Empuja el menú a la derecha */
+}
+
+.menu {
+  display: flex;
+  gap: 20px; /* Espacio entre los enlaces */
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease; /* Efecto de suavizado */
+}
+
+.menu a:hover {
+  color: #c3e0dd; /* Efecto al pasar el cursor */
+}

@@ -1,0 +1,45 @@
+.container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos para la imagen de la librería */
+.hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Superposición oscura sobre la imagen */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Hace que el fondo sea más oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+}
+
+/* Estilo del encabezado */
+header {
+  background-color: #004d40;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+}

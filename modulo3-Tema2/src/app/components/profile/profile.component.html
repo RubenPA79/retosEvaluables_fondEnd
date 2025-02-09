@@ -1,0 +1,30 @@
+<div class="profile-container">
+  <!-- Caja izquierda: Información del usuario -->
+  <div class="profile-info">
+    <img [src]="user.photo" alt="Foto de perfil" class="profile-img">
+    <h2>{{ user.name }} {{ user.last_name }}</h2>
+    <p><strong>Nombre:</strong> {{ user.name }}</p>
+    <p><strong>Apellidos:</strong> {{ user.last_name }}</p>
+    <p><strong>Correo:</strong> {{ user.email }}</p>
+  </div>
+
+  <!-- Caja derecha: Formulario de edición -->
+  <div class="profile-edit">
+    <h3>Editar datos</h3>
+    <form>
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="user.name" name="name" [ngModelOptions]="{standalone: true}">
+
+      <label>Apellidos</label>
+      <input type="text" [(ngModel)]="user.last_name" name="last_name" [ngModelOptions]="{standalone: true}">
+
+      <label>Correo</label>
+      <input type="email" [(ngModel)]="user.email" name="email" [ngModelOptions]="{standalone: true}">
+
+      <label>URL Foto</label>
+      <input type="text" [(ngModel)]="user.photo" name="photo" [ngModelOptions]="{standalone: true}">
+
+      <button type="button" (click)="modificarDatos()">Modificar</button>
+    </form>
+  </div>
+</div>

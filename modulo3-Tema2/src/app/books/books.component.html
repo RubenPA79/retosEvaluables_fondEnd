@@ -1,0 +1,27 @@
+<div class="books-container">
+  <h2>Lista de Libros</h2>
+
+  <div *ngIf="books.length > 0; else noBooks">
+    <div *ngFor="let book of books" class="book-card">
+      <img [src]="book.photo" alt="{{ book.title }}">
+      <h3>{{ book.title }}</h3>
+      <p>{{ book.author }}</p>
+      <p><strong>{{ book.price }}€</strong></p>
+    </div>
+  </div>
+
+  <ng-template #noBooks>
+    <p>No hay libros disponibles.</p>
+  </ng-template>
+
+  <h2>Añadir Libro</h2>
+  <form (submit)="addBook()">
+    <input type="text" placeholder="Título" [(ngModel)]="newBook.title" name="title" required>
+    <input type="text" placeholder="Autor" [(ngModel)]="newBook.author" name="author" required>
+    <input type="text" placeholder="Tipo" [(ngModel)]="newBook.type" name="type">
+    <input type="number" placeholder="Precio" [(ngModel)]="newBook.price" name="price">
+    <input type="text" placeholder="URL de la imagen" [(ngModel)]="newBook.photo" name="photo">
+    <button type="submit">Añadir</button>
+  </form>
+</div>
+

@@ -1,0 +1,8 @@
+<div class="card">
+  <button class="delete-button" (click)="removeCard()">X</button>
+  <img [src]="book.photo" alt="{{ book.title }}">
+  <h3>{{ book.title }}</h3>
+  <p><strong>Autor:</strong> {{ book.author }}</p>
+  <p><strong>Tipo:</strong> {{ book.type }}</p>
+  <p><strong>Precio:</strong> {{ book.price | currency }}</p>
+</div>

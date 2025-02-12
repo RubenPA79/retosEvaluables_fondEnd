@@ -26,10 +26,16 @@ export class BooksComponent {
 
   addBook() {
     if (this.newBook.title && this.newBook.author && this.newBook.photo) {
-      this.newBook.id_book = this.books.length + 1;
+      this.newBook.id_book = this.books.length > 0 ? this.books[this.books.length - 1].id_book + 1 : 1;
       this.books.push({ ...this.newBook });
       this.newBook = { id_book: 0, id_user: 1, title: '', type: '', author: '', price: 0, photo: '' };
     }
+  }
+
+  // ✅ Corrección: Asegurar que esta función existe
+  removeBook(id_book: number) {
+    console.log("Eliminando libro con id:", id_book);
+    this.books = this.books.filter(book => book.id_book !== id_book);
   }
 }
 

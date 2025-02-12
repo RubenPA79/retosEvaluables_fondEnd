@@ -2,12 +2,10 @@
   <h2>Lista de Libros</h2>
 
   <div *ngIf="books.length > 0; else noBooks">
-    <div *ngFor="let book of books" class="book-card">
-      <img [src]="book.photo" alt="{{ book.title }}">
-      <h3>{{ book.title }}</h3>
-      <p>{{ book.author }}</p>
-      <p><strong>{{ book.price }}€</strong></p>
-    </div>
+    <app-card *ngFor="let book of books"
+              [book]="book"
+              (deleteBook)="removeBook(book.id_book)">
+    </app-card>
   </div>
 
   <ng-template #noBooks>
@@ -24,4 +22,3 @@
     <button type="submit">Añadir</button>
   </form>
 </div>
-

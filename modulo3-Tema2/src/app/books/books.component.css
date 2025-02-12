@@ -2,76 +2,53 @@
 .books-container {
   text-align: center;
   margin-top: 20px;
-}
-
-/* Estilos para las tarjetas de los libros */
-.book-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin: 15px;
-  display: inline-block;
-  width: 220px;
-  text-align: center;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-/* Ajustar tamaño de imagen en las tarjetas */
-.book-card img {
-  max-width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-/* Estilos para los títulos de los libros */
-.book-card h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px;
-}
-
-/* Estilos para los autores */
-.book-card p {
-  font-size: 14px;
-  color: #555;
-  margin: 5px 0;
-}
-
-/* Estilos para el precio */
-.book-card p strong {
-  font-size: 16px;
-  color: #007bff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
 
 /* Estilo del formulario */
-form {
+.form-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 20px;
   margin-top: 20px;
-  flex-wrap: wrap;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Estilos para los inputs */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
-  width: 150px;
+  width: 200px;
+  text-align: center;
 }
 
-/* Botón de añadir */
 button {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 12px;
-  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
   border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  margin-top: 10px;
 }
 
 button:hover {

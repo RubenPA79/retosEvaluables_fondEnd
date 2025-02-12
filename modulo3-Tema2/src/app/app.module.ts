@@ -5,14 +5,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { FormsModule } from '@angular/forms';
-import { BooksComponent } from './books/books.component'; // Importante para [(ngModel)]
+import { BooksComponent } from './books/books.component';
+import { CardComponent } from './components/card/card.component'; // Importante para [(ngModel)]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProfileComponent,
-    BooksComponent
+    BooksComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

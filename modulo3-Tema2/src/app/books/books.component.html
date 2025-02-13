@@ -1,7 +1,8 @@
 <div class="books-container">
   <h2>Lista de Libros</h2>
 
-  <div *ngIf="books.length > 0; else noBooks">
+  <!-- Contenedor corregido para organizar los libros en filas -->
+  <div class="books-list" *ngIf="books.length > 0; else noBooks">
     <app-card *ngFor="let book of books"
               [book]="book"
               (deleteBook)="removeBook(book.id_book)">

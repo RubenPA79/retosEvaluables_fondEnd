@@ -1,1 +1,119 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset CSS para evitar inconsistencias entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor de libros con Flexbox para correcta distribución */
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Estilo para cada card de libro */
+.book-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  width: calc(25% - 20px);
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.book-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.book-card p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Botón de eliminar */
+.book-card .delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.book-card .delete-btn:hover {
+  background: darkred;
+}
+
+/* Formulario de añadir libros debe estar siempre abajo */
+.add-book-form {
+  width: 100%;
+  max-width: 800px;
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Eliminar el panel derecho de añadir libros */
+.add-book-right {
+  display: none;
+}
+
+/* Diseño responsive */
+@media (max-width: 1024px) {
+  .book-card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card {
+    width: calc(100% - 20px);
+  }
+}

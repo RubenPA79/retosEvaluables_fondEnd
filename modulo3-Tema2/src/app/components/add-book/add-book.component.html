@@ -1,0 +1,20 @@
+<h2>Añadir un nuevo libro</h2>
+
+<form (submit)="addBook(); $event.preventDefault()">
+  <label for="title">Título:</label>
+  <input id="title" [(ngModel)]="book.title" name="title" required />
+
+  <label for="author">Autor:</label>
+  <input id="author" [(ngModel)]="book.author" name="author" required />
+
+  <label for="type">Tipo:</label>
+  <input id="type" [(ngModel)]="book.type" name="type" required />
+
+  <label for="price">Precio:</label>
+  <input id="price" type="number" [(ngModel)]="book.price" name="price" required />
+
+  <label for="imageUrl">URL de la Imagen:</label>
+  <input id="imageUrl" type="text" [(ngModel)]="book.imageUrl" name="imageUrl" required />
+
+  <button type="submit">Añadir</button>
+</form>

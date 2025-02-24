@@ -5,26 +5,16 @@
   <button class="btn btn-primary">➕ Añadir nuevo libro</button>
 </a>
 
-<!-- Contenedor corregido para organizar los libros en filas -->
-<div class="books-list" *ngIf="books.length > 0; else noBooks">
-  <app-card
-    *ngFor="let book of books"
-    [book]="book"
-    (deleteBook)="removeBook(book.id)">
-  </app-card>
+<!-- Contenedor de los libros en formato de tarjetas -->
+<div class="book-container">
+  <ng-container *ngIf="books.length > 0; else noBooks">
+    <ng-container *ngFor="let book of books">
+      <app-card [book]="book" (deleteBook)="deleteBook(book.id)"></app-card>
+    </ng-container>
+  </ng-container>
 </div>
 
 <ng-template #noBooks>
   <p>No hay libros disponibles.</p>
 </ng-template>
 
-<h2>➕ Añadir Libro</h2>
-
-<form (submit)="addBook()">
-  <input type="text" placeholder="Título" [(ngModel)]="newBook.title" name="title" required>
-  <input type="text" placeholder="Autor" [(ngModel)]="newBook.author" name="author" required>
-  <input type="text" placeholder="Tipo" [(ngModel)]="newBook.type" name="type">
-  <input type="number" placeholder="Precio" [(ngModel)]="newBook.price" name="price">
-  <input type="text" placeholder="URL de la imagen" [(ngModel)]="newBook.imageUrl" name="imageUrl">
-  <button type="submit">Añadir</button>
-</form>

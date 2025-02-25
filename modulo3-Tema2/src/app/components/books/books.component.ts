@@ -13,14 +13,19 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
+    this.loadBooks();
+  }
+
+  loadBooks(): void {
     this.books = this.booksService.getAll(); // Cargar los libros al iniciar
   }
 
   deleteBook(id: number): void {
     if (this.booksService.delete(id)) {
-      this.books = this.booksService.getAll(); // Refrescar la lista
+      this.loadBooks(); // Refrescar la lista después de eliminar
     }
   }
 }
+
 
 

@@ -7,12 +7,13 @@
 
 <!-- Contenedor de los libros en formato de tarjetas -->
 <div class="book-container">
-  <div class="book-card" *ngFor="let book of books">
-    <img [src]="book.imageUrl" alt="{{ book.title }}" class="book-image"/>
-    <h3>{{ book.title }}</h3>
-    <p><strong>Autor:</strong> {{ book.author }}</p>
-    <p><strong>Tipo:</strong> {{ book.type }}</p>
-    <p><strong>Precio:</strong> 💰 {{ book.price | currency }}</p>
-    <button class="delete-button" (click)="deleteBook(book.id)">❌</button>
-  </div>
+  <ng-container *ngIf="books.length > 0; else noBooks">
+    <ng-container *ngFor="let book of books">
+      <app-card [book]="book" (deleteBook)="deleteBook(book.id)"></app-card>
+    </ng-container>
+  </ng-container>
 </div>
+
+<ng-template #noBooks>
+  <p>No hay libros disponibles.</p>
+</ng-template>

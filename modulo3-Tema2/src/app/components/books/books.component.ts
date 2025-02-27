@@ -5,7 +5,7 @@ import { Book } from '../../models/book.model';
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css'],
+  styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
   books: Book[] = [];
@@ -13,19 +13,13 @@ export class BooksComponent implements OnInit {
   constructor(private booksService: BooksService) {}
 
   ngOnInit(): void {
-    this.loadBooks();
-  }
-
-  loadBooks(): void {
-    this.books = this.booksService.getAll(); // Cargar los libros al iniciar
+    this.books = this.booksService.getAll();
   }
 
   deleteBook(id: number): void {
     if (this.booksService.delete(id)) {
-      this.loadBooks(); // Refrescar la lista después de eliminar
+      this.books = this.booksService.getAll();
     }
   }
 }
-
-
 

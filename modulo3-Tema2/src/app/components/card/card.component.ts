@@ -1,16 +1,16 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Book } from '../../models/book.model';
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-card', // ✅ Asegurar que el selector es correcto
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() book: any; // Recibe el libro desde el padre
-  @Output() deleteBook = new EventEmitter<number>(); // Enviar ID del libro al padre
+  @Input() book!: Book;
+  @Output() deleteBook = new EventEmitter<number>();
 
-  removeCard() {
-    console.log("Se hizo clic en eliminar", this.book.id_book);
-    this.deleteBook.emit(this.book.id_book); // Enviar ID del libro al padre
+  removeCard(): void {
+    this.deleteBook.emit(this.book.id);
   }
 }

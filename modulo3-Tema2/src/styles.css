@@ -1,119 +1,57 @@
-/* Reset CSS para evitar inconsistencias entre navegadores */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  padding: 20px;
+/* Estilos para mejorar el perfil */
+.profile-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Contenedor de libros con Flexbox para correcta distribución */
-.books-container {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-/* Estilo para cada card de libro */
-.book-card {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.profile-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
-  width: calc(25% - 20px);
+  margin-bottom: 20px;
 }
 
-.book-card:hover {
-  transform: scale(1.05);
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px; /* Agregamos más separación de la imagen con el texto */
 }
 
-.book-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+.profile-edit {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-.book-card h3 {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-.book-card p {
-  font-size: 1rem;
-  text-align: center;
-}
-
-/* Botón de eliminar */
-.book-card .delete-btn {
-  background: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.book-card .delete-btn:hover {
-  background: darkred;
-}
-
-/* Formulario de añadir libros debe estar siempre abajo */
-.add-book-form {
-  width: 100%;
-  max-width: 800px;
-  background: white;
+/* Estilos para organizar las tarjetas en una cuadrícula de 4 columnas */
+.books-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas en pantallas grandes */
+  gap: 20px;
+  justify-content: center;
   padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
 }
 
-/* Eliminar el panel derecho de añadir libros */
-.add-book-right {
-  display: none;
-}
-
-/* Diseño responsive */
 @media (max-width: 1024px) {
-  .book-card {
-    width: calc(33.33% - 20px);
+  .books-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
   }
 }
 
 @media (max-width: 768px) {
-  .book-card {
-    width: calc(50% - 20px);
+  .books-list {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna en móviles */
   }
 }
 
-@media (max-width: 480px) {
-  .book-card {
-    width: calc(100% - 20px);
-  }
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
 }

@@ -1,15 +1,11 @@
-<h2>Añadir Libro</h2>
-
-<form (ngSubmit)="addBook()">
-  <input type="text" placeholder="Título" [(ngModel)]="book.title" name="title" required>
-  <input type="text" placeholder="Autor" [(ngModel)]="book.author" name="author" required>
-  <input type="text" placeholder="Tipo" [(ngModel)]="book.type" name="type">
-  <input type="number" placeholder="Precio" [(ngModel)]="book.price" name="price">
-  <input type="text" placeholder="URL de la imagen" [(ngModel)]="book.imageUrl" name="imageUrl">
-  <button type="submit">Añadir</button>
-</form>
-
-<!-- Botón para volver a la lista de libros -->
-<a routerLink="/books">
-  <button class="btn btn-secondary">⬅ Volver a la lista</button>
-</a>
+<h2>Añadir libro</h2>
+<div class="add-book-container">
+  <form (ngSubmit)="addBook()">
+    <input type="text" placeholder="Título" [(ngModel)]="newBook.title" name="title" required>
+    <input type="text" placeholder="Autor" [(ngModel)]="newBook.author" name="author" required>
+    <input type="text" placeholder="Tipo" [(ngModel)]="newBook.type" name="type">
+    <input type="number" placeholder="Precio" [(ngModel)]="newBook.price" name="price">
+    <input type="text" placeholder="URL de la imagen" [(ngModel)]="newBook.imageUrl" name="imageUrl">
+    <button type="submit">Insertar Libro</button>
+  </form>
+</div>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from '../../models/user'; // Importamos la clase User
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +6,12 @@ import { User } from '../../models/user'; // Importamos la clase User
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  user: User = new User(1, "Rubén", "Rivas Bricio", "ruben@example.com", "assets/profile.jpg", "123456");
+  user = {
+    name: 'Rubén',
+    last_name: 'Rivas Bricio',
+    email: 'ruben@example.com',
+    photo: 'assets/profile.jpg'
+  };
 
   modificarDatos() {
     console.log("Datos actualizados:", this.user);

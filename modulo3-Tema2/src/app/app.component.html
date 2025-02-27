@@ -1,7 +1,9 @@
 <nav class="navbar">
-  <a routerLink="/" class="nav-link">Inicio</a>
-  <a routerLink="/profile" class="nav-link">Perfil</a>
-  <a routerLink="/books" class="nav-link">Libros</a>  <!-- 🔹 Enlace agregado -->
+  <ul>
+    <li><a routerLink="/">Inicio</a></li>
+    <li><a routerLink="/books">Libros</a></li>
+    <li><a routerLink="/add-book">Añadir Libro</a></li>
+    <li><a routerLink="/profile">Perfil</a></li>
+  </ul>
 </nav>
-
 <router-outlet></router-outlet>

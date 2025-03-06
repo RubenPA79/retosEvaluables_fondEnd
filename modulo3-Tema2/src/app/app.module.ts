@@ -8,7 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BooksComponent } from './components/books/books.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { CardComponent } from './components/card/card.component'; // ✅ Importación añadida
+import { LoginComponent } from './components/login/login.component';
+import { CardComponent } from './components/card/card.component';  // <-- Verifica que está importado
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CardComponent } from './components/card/card.component'; // ✅ Importa
     BooksComponent,
     AddBookComponent,
     ProfileComponent,
-    CardComponent // ✅ Asegurar que está en declarations
+    LoginComponent,
+    CardComponent // <-- Asegúrate de que está en las declaraciones
   ],
   imports: [
     BrowserModule,
@@ -27,5 +29,5 @@ import { CardComponent } from './components/card/card.component'; // ✅ Importa
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
 

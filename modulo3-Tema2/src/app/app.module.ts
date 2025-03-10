@@ -9,7 +9,9 @@ import { BooksComponent } from './components/books/books.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
-import { CardComponent } from './components/card/card.component';  // <-- Verifica que está importado
+import { CardComponent } from './components/card/card.component';
+import { HeaderComponent } from './page/header/header.component';
+import { HeaderDirective } from './page/header.directive';  // <-- Verifica que está importado
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { CardComponent } from './components/card/card.component';  // <-- Verifi
     AddBookComponent,
     ProfileComponent,
     LoginComponent,
-    CardComponent // <-- Asegúrate de que está en las declaraciones
+    CardComponent,
+    HeaderComponent,
+    HeaderDirective // <-- Asegúrate de que está en las declaraciones
   ],
   imports: [
     BrowserModule,

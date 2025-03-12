@@ -44,10 +44,18 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  z-index: 10; /* ✅ Asegura que la X esté al frente */
 }
 
+/* ✅ Evitar que la imagen tape la X */
+.image-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ✅ Cuando el mouse está sobre la X, no cambia el color */
 .delete-button:hover {
   background-color: darkred;
+  color: white;
 }
-
 

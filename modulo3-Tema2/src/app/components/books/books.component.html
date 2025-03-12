@@ -1,7 +1,7 @@
 <h2>Lista de Libros</h2>
 
 <div class="books-list" *ngIf="books.length > 0; else noBooks">
-  <app-card *ngFor="let book of books" [book]="book" (deleteBook)="deleteBook(book.id)"></app-card>
+  <app-card *ngFor="let book of books; let i = index" [book]="book" [index]="i" (deleteBook)="deleteBook(book.id)"></app-card>
 </div>
 
 <ng-template #noBooks>

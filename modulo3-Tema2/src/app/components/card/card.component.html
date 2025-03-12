@@ -1,7 +1,7 @@
-<div class="card">
-  <div class="delete-button" [ngClass]="{ 'even-button': index % 2 === 0, 'odd-button': index % 2 !== 0 }" (click)="deleteBook.emit(book.id)">✖</div>
+<div [ngClass]="getCardClass()">
+  <div class="delete-button" (click)="deleteBook.emit(book.id)">✖</div>
   <div class="image-container">
-    <img [src]="book.imageUrl" alt="Imagen del libro" class="book-image">
+    <img class="book-image" [src]="book.imageUrl" alt="Imagen del libro">
   </div>
   <h3>{{ book.title }}</h3>
   <p><strong>Código:</strong> {{ book.id | bookCode }}</p>
@@ -9,4 +9,3 @@
   <p><strong>Tipo:</strong> {{ book.type }}</p>
   <p><strong>Precio:</strong> €{{ book.price }}</p>
 </div>
-

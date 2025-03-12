@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../../models/book.model';
 
 @Component({
@@ -8,8 +8,11 @@ import { Book } from '../../models/book.model';
 })
 export class CardComponent {
   @Input() book!: Book;
-  @Input() index!: number;  // ✅ Ahora recibimos el índice desde books.component.html
-
+  @Input() index!: number;
   @Output() deleteBook = new EventEmitter<number>();
+
+  getCardClass(): string {
+    return this.index % 2 === 0 ? 'card even' : 'card odd';
+  }
 }
 
